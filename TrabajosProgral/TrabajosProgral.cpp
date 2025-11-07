@@ -2,6 +2,7 @@
 //
 
 #include <iostream> 
+#include <string>
 #include "ListaDoble.h"
 using namespace std;    
   
@@ -9,16 +10,17 @@ int main()
 {
 
     ListaDoble lista;
-
     bool Continuar = true;
     string Respuesta = "Si";
     int dato = 0;
 
+    // Carga inicial de datos
     while (Continuar)
     {
         cout << "Ingrese Dato" << endl;
         cin >> dato;
         lista.Insertar(dato);
+
         cout << "Desea continuar? Si/No" << endl;
         cin >> Respuesta;
 
@@ -30,15 +32,87 @@ int main()
         {
             Continuar = true;
         }
+    }
 
-    }/*
-   lista.Insertar(20);
-   lista.Insertar(10);
-   lista.Insertar(8);
-   lista.Insertar(7);
-   lista.Insertar(30);
-   */
+    cout << endl;
+    cout << "Contenido de la lista:" << endl;
     lista.Mostrar();
+
+    // Menu con switch
+    int opcion = 0;
+    bool seguirMenu = true;
+
+    while (seguirMenu)
+    {
+        cout << endl;
+        cout << "===== Menu Lista Doble =====" << endl;
+        cout << "1) Insertar dato" << endl;
+        cout << "2) Mostrar lista" << endl;
+        cout << "3) Buscar valor" << endl;
+        cout << "4) Buscar multiplos de un numero" << endl;
+        cout << "5) Calcular promedio" << endl;
+        cout << "6) Salir" << endl;
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+
+        switch (opcion)
+        {
+        case 1:
+            cout << "Ingrese Dato" << endl;
+            cin >> dato;
+            lista.Insertar(dato);
+            cout << "Dato insertado" << endl;
+            break;
+
+        case 2:
+            cout << "Contenido de la lista:" << endl;
+            lista.Mostrar();
+            break;
+
+        case 3:
+        {
+            int valor;
+            cout << "Digite valor a buscar:" << endl;
+            cin >> valor;
+            lista.Buscar(valor);
+            break;
+        }
+
+        case 4:
+        {
+            int numero;
+            cout << "Digite el numero para buscar sus multiplos:" << endl;
+            cin >> numero;
+            if (numero == 0)
+            {
+                cout << "No se puede buscar multiplos de 0" << endl;
+            }
+            else
+            {
+                lista.BuscarMultiplos(numero);
+            }
+            break;
+        }
+
+        case 5:
+        {
+            double promedio = lista.Promedio();
+            cout << "Promedio de los valores: " << promedio << endl;
+            break;
+        }
+
+        case 6:
+            seguirMenu = false;
+            cout << "Saliendo del programa..." << endl;
+            break;
+
+        default:
+            cout << "Opcion no valida" << endl;
+            break;
+        }
+    }
+
+    return 0;
     /*
      int i;
      cout << "Digite valor a buscar:" << endl;

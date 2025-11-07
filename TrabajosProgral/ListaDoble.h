@@ -9,5 +9,8 @@ public:
 	void Insertar(int valor);
 	void Mostrar();
 	void Buscar(int valor);
-
+	void BuscarMultiplos(int numero);
+	double Promedio();	
 };
+// End of ListaDoble.h
+// #pragma endregion
