@@ -8,6 +8,7 @@ public:
 
 	void Insertar(int valor);
 	void Mostrar();
+	void Eliminar(int valor);
 	void Buscar(int valor);
 	void BuscarMultiplos(int numero);
 	double Promedio();	

@@ -37,6 +37,33 @@ void ListaDoble::Mostrar() {
 }
 #pragma endregion
 
+void ListaDoble::Eliminar(int valor) // Eliminar un nodo por valor
+{
+	NodoDoble* actual = head;
+	while (actual != nullptr)
+	{
+		if (actual->dato == valor)
+		{
+			if (actual->anterior != nullptr)
+			{
+				actual->anterior->siguiente = actual->siguiente;
+			}
+			else
+			{
+				head = actual->siguiente;
+			}
+			if (actual->siguiente != nullptr)
+			{
+				actual->siguiente->anterior = actual->anterior;
+			}
+			delete actual;
+			return;
+		}
+		actual = actual->siguiente;
+	}
+}
+
+
 void ListaDoble::Buscar(int valor)
 {
 	int posicion = 1;
