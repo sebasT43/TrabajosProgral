@@ -51,7 +51,8 @@ int main()
         cout << "3) Buscar valor" << endl;
         cout << "4) Buscar multiplos de un numero" << endl;
         cout << "5) Calcular promedio" << endl;
-        cout << "6) Salir" << endl;
+        cout << "6) Mayor valor" << endl;
+        cout << "7) Salir" << endl;
         cout << "Seleccione una opcion: ";
         cin >> opcion;
 
@@ -100,8 +101,11 @@ int main()
             cout << "Promedio de los valores: " << promedio << endl;
             break;
         }
-
         case 6:
+            lista.numeroMayor();
+			break;
+
+        case 7:
             seguirMenu = false;
             cout << "Saliendo del programa..." << endl;
             break;

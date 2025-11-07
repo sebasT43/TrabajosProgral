@@ -11,7 +11,8 @@ public:
 	void Eliminar(int valor);
 	void Buscar(int valor);
 	void BuscarMultiplos(int numero);
-	double Promedio();	
+	double Promedio();
+	void numeroMayor();
+	
+
 };
-// End of ListaDoble.h
-// #pragma endregion

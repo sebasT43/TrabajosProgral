@@ -20,7 +20,7 @@ void ListaDoble::Insertar(int valor) {
 
 }
 
-#pragma region Metodo Mostrar
+#pragma region MetodoMostrar
 void ListaDoble::Mostrar() {
 	NodoDoble* actual = head;
 	while (actual != nullptr)
@@ -105,7 +105,7 @@ void ListaDoble::BuscarMultiplos(int numero)
 double ListaDoble::Promedio()  
 {
 	if (head == nullptr) {
-		cout << "La lista est� vac�a." << endl;
+		cout << "La lista esta vacia." << endl;
 		return 0.0; // Retorna 0 si no hay elementos
 	}
 
@@ -121,55 +121,28 @@ double ListaDoble::Promedio()
 
 	double promedio = static_cast<double>(suma) / contador;
 	return promedio;
+
 }
 
-/*
-void ListaDoble::ContarPares()
+
+void ListaDoble::numeroMayor()
 {
-    if (head == nullptr) {
-        cout << "La lista esta vacia." << endl;
-        return;
-    }
+	if (head == nullptr) {
+		cout << "La lista esta vacia." << endl;
+		return;
+	}
 
-    NodoDoble* actual = head;
-    int posicion = 1;
-    int contadorPares = 0;
-
-    while (actual != nullptr) {
-        if (actual->dato % 2 == 0) {
-            cout << "Posicion " << posicion << " -> Valor: " << actual->dato << endl;
-            contadorPares++;
-        }
-        actual = actual->siguiente;
-        posicion++;
-    }
-
-    if (contadorPares == 0) {
-        cout << "No se encontraron numeros pares en la lista." << endl;
-    } else {
-        cout << "Total de numeros pares encontrados: " << contadorPares << endl;
-    }
+	NodoDoble* actual = head;
+	int mayor = actual->dato;
+	while (actual != nullptr) {
+		if (actual->dato > mayor) {
+			mayor = actual->dato;
+		}
+		actual = actual->siguiente;
+	}
+	cout << "El numero mayor en la lista es: " << mayor << endl;
 }
-*/
 
-/*void ListaDoble::MayorYMenor()
-{
-    if (head == nullptr) {
-        cout << "La lista esta vacia. No se puede calcular mayor y menor." << endl;
-        return;
-    }
 
-    NodoDoble* actual = head;
-    int mayor = actual->dato;
-    int menor = actual->dato;
-    actual = actual->siguiente;
 
-    while (actual != nullptr) {
-        if (actual->dato > mayor) mayor = actual->dato;
-        if (actual->dato < menor) menor = actual->dato;
-        actual = actual->siguiente;
-    }
 
-    cout << "Valor mayor: " << mayor << endl;
-    cout << "Valor menor: " << menor << endl;
-}
