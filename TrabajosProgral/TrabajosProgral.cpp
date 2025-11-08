@@ -31,84 +31,18 @@ int main()
             Continuar = true;
         }
 
-    }/*
-   lista.Insertar(20);
-   lista.Insertar(10);
-   lista.Insertar(8);
-   lista.Insertar(7);
-   lista.Insertar(30);
-   */
-    lista.Mostrar();
-    /*
-     int i;
-     cout << "Digite valor a buscar:" << endl;
-     cin >> i;
-     //lista.Buscar(i);
-     */
+    }
 
-     /*int i = 10;
-     int* x = &i;
-
-
-     cout <<"valor:" << i << endl;
-     cout << "Direccion:" << &i << endl;
-     cout << "Valor de *x:" << x << endl;
-     cout << "Valor en la direccion guardad *x:" << *x << endl;
-
-     i = 20;
-
-     cout << "valor:" << i << endl;
-     cout << "Direccion:" << &i << endl;
-     cout << "Valor de *x:" << x << endl;
-     cout << "Valor en la direccion guardad *x:" << *x << endl;
-     */
-
-
-     //// Persona p("Pablo", "54545",45);
-     //
-
-     // string Respuesta = "Si";
-     // 
-     // bool Continuar = true;
-
-     // 
-
-     // while (Continuar)
-     // {
-     //     Estudiante estudiante;
-     //     estudiante = estudiante.SolicitarDatos();
-
-     //     Estudiante estudiantes[3];
-     //     estudiantes[1] = estudiante;
-
-
-
-     //     Profesor profe;
-     //     Grupo grupo("TI",profe,estudiantes);
-     //     grupo.Mostrar();
-
-     //    // estudiante.Mostrar();
-     //     cout << "Desea continuar? Si/No" << endl;
-     //         cin >> Respuesta;
-
-     //     if (Respuesta == "No" || Respuesta == "no" )
-     //     {
-     //         Continuar = false;
-     //     }
-     //     else
-     //     {
-     //         Continuar = true;
-     //     }
-     //     
-
-
-
-
-     // }
-
-
-
-
+	cout << "Lista de los numeros ingresados" << endl;
+	lista.Mostrar();
+    cout << endl;
+	cout << "Numero mayor y menor " << endl;
+	lista.numeroMayor();
+	cout << endl;
+	lista.numeroMenor();
+    cout << endl;
+	cout << "Numeros pares e impares" << endl;
+    lista.numeParImpar();
 
 
 }
