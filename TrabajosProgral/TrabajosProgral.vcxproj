@@ -123,13 +123,37 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Cliente.cpp" />
+    <ClCompile Include="ListaCliente.cpp" />
     <ClCompile Include="ListaDoble.cpp" />
+    <ClCompile Include="ListaPago.cpp" />
+    <ClCompile Include="ListaPedido.cpp" />
+    <ClCompile Include="ListaProductos.cpp" />
+    <ClCompile Include="NodoCliente.cpp" />
     <ClCompile Include="NodoDoble.cpp" />
+    <ClCompile Include="NodoPago.cpp" />
+    <ClCompile Include="NodoPedido.cpp" />
+    <ClCompile Include="NodoProductos.cpp" />
+    <ClCompile Include="Pago.cpp" />
+    <ClCompile Include="Pedido.cpp" />
+    <ClCompile Include="Productos.cpp" />
     <ClCompile Include="TrabajosProgral.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cliente.h" />
+    <ClInclude Include="ListaCliente.h" />
     <ClInclude Include="ListaDoble.h" />
+    <ClInclude Include="ListaPago.h" />
+    <ClInclude Include="ListaPedido.h" />
+    <ClInclude Include="ListaProductos.h" />
+    <ClInclude Include="NodoCliente.h" />
     <ClInclude Include="NodoDoble.h" />
+    <ClInclude Include="NodoPago.h" />
+    <ClInclude Include="NodoPedido.h" />
+    <ClInclude Include="NodoProductos.h" />
+    <ClInclude Include="Pago.h" />
+    <ClInclude Include="Pedido.h" />
+    <ClInclude Include="Productos.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

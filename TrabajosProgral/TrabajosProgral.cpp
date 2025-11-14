@@ -1,48 +1,89 @@
 // HerenciaM.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
 //
-
-#include <iostream> 
-#include "ListaDoble.h"
-using namespace std;    
+ 
+#include <iostream>
+#include <string>
+#include "ListaProductos.h"
+#include "ListaCliente.h"
+#include "ListaPedido.h"
+#include "ListaPago.h"
+using namespace std;
   
 int main()
 {
-
-    ListaDoble lista;
-
-    bool Continuar = true;
-    string Respuesta = "Si";
-    int dato = 0;
-
-    while (Continuar)
+	int opcion = 0;
+    ListaProductos listaP;
+	ListaClientes listaC;
+    ListaPedidos listaPe;
+	ListaPagos listaPa;
+    do
     {
-        cout << "Ingrese Dato" << endl;
-        cin >> dato;
-        lista.Insertar(dato);
-        cout << "Desea continuar? Si/No" << endl;
-        cin >> Respuesta;
+        system("cls");
+        cout << "===== MENU PRINCIPAL =====" << endl;
+        cout << "1. Productos" << endl;
+        cout << "2. Clientes" << endl;
+        cout << "3. Pedidos" << endl;
+        cout << "4. Pagos" << endl;
+        cout << "5. Guardar todo en archivos" << endl;
+        cout << "6. Leer todo en archivos" << endl;
+        cout << "7. Salir" << endl;
+        cout << "Opcion: ";
+        cin >> opcion;
 
-        if (Respuesta == "No" || Respuesta == "no")
+        system("cls");
+
+        switch (opcion)
         {
-            Continuar = false;
-        }
-        else
-        {
-            Continuar = true;
+        case 1:
+            listaP.menuProductos();
+            break;
+
+        case 2:
+            listaC.menuClientes();
+            break;
+
+        case 3:
+            listaPe.menuPedidos(listaC, listaP);
+            break;
+
+        case 4:
+            listaPa.menuPagos(listaC);
+            break;
+
+        case 5:
+            listaP.GuardarEnArchivo();
+            listaC.GuardarEnArchivo();
+            listaPe.GuardarEnArchivo();
+            listaPa.GuardarEnArchivo();
+            cout << "Datos guardados en archivos." << endl;
+            system("pause");
+            break;
+        
+        case 6:
+            cout << "------ Productos ------" << endl;
+            listaP.LeerArchivo();
+            cout << "\n------ Clientes ------" << endl;
+            listaC.LeerArchivo();
+            cout << "\n------ Pedidos ------" << endl;
+            listaPe.LeerArchivo();
+            cout << "\n------ Pagos ------" << endl;
+            listaPa.LeerArchivo();
+            system("pause");
+            break;
+
+        case 7:
+            cout << "Saliendo del sistema..." << endl;
+            system("pause");
+            break;
+
+        default:
+            cout << "Opcion no valida." << endl;
+            system("pause");
         }
 
-    }
+    } while (opcion != 7);
 
-	cout << "Lista de los numeros ingresados" << endl;
-	lista.Mostrar();
-    cout << endl;
-	cout << "Numero mayor y menor " << endl;
-	lista.numeroMayor();
-	cout << endl;
-	lista.numeroMenor();
-    cout << endl;
-	cout << "Numeros pares e impares" << endl;
-    lista.numeParImpar();
+    return 0;
 
 
 }
