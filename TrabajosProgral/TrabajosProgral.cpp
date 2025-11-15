@@ -70,7 +70,7 @@ int main()
             listaPa.LeerArchivo();
             system("pause");
             break;
-
+            
         case 7:
             cout << "Saliendo del sistema..." << endl;
             system("pause");
