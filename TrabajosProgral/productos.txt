@@ -1,0 +1,2 @@
+Lista de Productos
+Nombre: oreo | Precio: 1250 | Stock: 23

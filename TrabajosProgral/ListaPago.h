@@ -15,4 +15,8 @@ public:
     void menuPagos(ListaClientes& listaC);
     void GuardarEnArchivo();
     void LeerArchivo();
+
+	int cantidadPagos();
+	void montoTotal();
+	void promedioPagos();
 };

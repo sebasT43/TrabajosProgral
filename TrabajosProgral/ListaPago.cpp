@@ -92,7 +92,10 @@ void ListaPagos::menuPagos(ListaClientes& listaC)
         std::cout << "=== MENU PAGOS ===" << std::endl;
         std::cout << "1. Crear pago" << std::endl;
         std::cout << "2. Mostrar pagos" << std::endl;
-        std::cout << "3. Volver" << std::endl;
+        std::cout << "3. Cantidad de Pagos" << std::endl;
+        std::cout << "4. Total a pagar " << std::endl;
+        std::cout << "5. Promedio de pago " << std::endl;
+        std::cout << "6. Salir " << std::endl;
         std::cout << "Opcion: ";
         std::cin >> opcion;
 
@@ -106,14 +109,27 @@ void ListaPagos::menuPagos(ListaClientes& listaC)
             system("pause");
             break;
         case 3:
+			cout << "La cantidad de pagos registrados es: " << cantidadPagos() << endl;
+			system("pause");
             break;
+		case 4:
+            montoTotal();
+            system("pause");
+			break;
+        case 5:
+            promedioPagos();
+            system("pause");
+			break;
+        case 6:
+            cout << "Saliendo del menu de pagos." << std::endl;
+			break;
         default:
             std::cout << "Opcion no valida." << std::endl;
             system("pause");
             break;
         }
 
-    } while (opcion != 3);
+    } while (opcion != 6);
 }
 
 void ListaPagos::GuardarEnArchivo()
@@ -159,4 +175,49 @@ void ListaPagos::LeerArchivo()
     }
 
     archivo.close();
+}
+
+int ListaPagos::cantidadPagos()
+{
+    int contador = 0;
+    NodoPago* actual = head;
+    while (actual != nullptr)
+    {
+        contador++;
+        actual = actual->siguiente;
+    }
+    return contador;
+}
+
+void ListaPagos::montoTotal()
+{
+    float total = 0.0;
+    NodoPago* actual = head;
+
+    while (actual != nullptr)
+    {
+        total += actual->pago.monto;
+        actual = actual->siguiente;
+    }
+    cout << "Monto total de pagos: " << total << endl;
+}
+
+void ListaPagos::promedioPagos()
+{
+    float total = 0.0;
+    int contador = 0;
+    NodoPago* actual = head;
+    while (actual != nullptr)
+    {
+        total += actual->pago.monto;
+        contador++;
+        actual = actual->siguiente;
+    }
+    if (contador == 0)
+    {
+        cout << "No hay pagos registrados para calcular el promedio." << endl;
+        return;
+    }
+    float promedio = total / contador;
+    cout << "Promedio de pagos: " << promedio << endl;
 }
